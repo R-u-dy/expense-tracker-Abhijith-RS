@@ -17,8 +17,8 @@ A simple, responsive Expense Tracker web app built with plain HTML, CSS, and Jav
 
 This is a static site — no installation or server required.
 
-1. Open `index.html` directly in any modern web browser (double-click the file, or right-click → Open With → Browser).
-
+1. Open `index.html` locally in any modern web browser (double-click the file, or right-click → Open With → Browser).
+2. or click directly to page https://r-u-dy.github.io/expense-tracker-Abhijith-RS/
 That's it — the app runs entirely client-side and stores your data in your browser's Local Storage. `index.html` links to `style.css` and `script.js` using relative paths, so all three files just need to stay in the same folder.
 
 **Optional (recommended for consistent behavior across browsers):**

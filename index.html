@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash Book — Expense Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Cash Book</h1>
+    <p>A running record of what comes in and what goes out.</p>
+    <hr class="rule">
+  </header>
+
+  <div class="ledger-summary">
+    <div class="flank income">
+      <div class="flank-label">income</div>
+      <div class="flank-value" id="totalIncome">₹0.00</div>
+    </div>
+    <div class="stamp" id="stampBalance">
+      <div class="stamp-label">balance</div>
+      <div class="stamp-value" id="totalBalance">₹0.00</div>
+    </div>
+    <div class="flank expense">
+      <div class="flank-label">expense</div>
+      <div class="flank-value" id="totalExpense">₹0.00</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="ticket">
+      <h2 id="formTitle">Add transaction</h2>
+      <form id="txForm">
+        <div class="toggle">
+          <button type="button" id="btnIncome" class="active income-active">Income</button>
+          <button type="button" id="btnExpense">Expense</button>
+        </div>
+        <div class="field">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" step="0.01" placeholder="0.00">
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category"></select>
+        </div>
+        <div class="field">
+          <label for="date">Date</label>
+          <input type="date" id="date">
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" placeholder="Optional note"></textarea>
+        </div>
+        <div class="error" id="formError"></div>
+        <button type="submit" class="submit" id="submitBtn">Add Transaction</button>
+      </form>
+
+      <div class="tape">
+        <h2>This month, by category</h2>
+        <div id="chart"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Register</h2>
+      <div class="filters">
+        <div class="f">
+          <label for="filterType">Show</label>
+          <select id="filterType">
+            <option value="all">All types</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="filterCategory">Category</label>
+          <select id="filterCategory"><option value="all">All categories</option></select>
+        </div>
+        <div class="f">
+          <label for="filterSearch">Find</label>
+          <input type="text" id="filterSearch" placeholder="Search description...">
+        </div>
+      </div>
+      <div class="register-wrap">
+        <table class="register">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th class="num">Debit</th>
+              <th class="num">Credit</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="txList"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
